@@ -1,8 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react';
+import {
+  List,
+  ListInlineItem,
+} from 'reactstrap';
 
 const Footer = () => {
   return (
-    <div>Footer</div>
+    <List type="inline">
+  <ListInlineItem>
+    © Renita Gidlund,
+  </ListInlineItem>
+  <ListInlineItem>
+    Shannon Young,
+  </ListInlineItem>
+  <ListInlineItem>
+    Annabella Chan
+  </ListInlineItem>
+</List>
   )
 }
 
