@@ -38,7 +38,7 @@ function Header(args) {
               <DropdownToggle nav caret>
                 View
               </DropdownToggle>
-              <DropdownMenu right>
+              <DropdownMenu end>
                 <DropdownItem>Option 1</DropdownItem>
                 <DropdownItem>Option 2</DropdownItem>
                 <DropdownItem divider />
