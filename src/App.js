@@ -8,11 +8,12 @@ import CatShow from "./pages/CatShow";
 import NotFound from "./pages/NotFound";
 import Home from "./pages/Home"
 import Footer from "./components/Footer";
-import cats from "./mockCats";
+import mockCats from "./mockCats";
 import { Routes, Route } from "react-router-dom";
+import React, { useState } from "react"; 
 
 const App = () => {
-  console.log(cats);
+  const [cats, setCats] = useState(mockCats)
   return (
     <>
       <Header />

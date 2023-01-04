@@ -28,7 +28,7 @@ const CatShow = ({ cats }) => {
           {currentCat.name}, {currentCat.age}
           </CardTitle>
           <CardText>
-            Enjoys: {currentCat.enjoys}
+            {currentCat.enjoys}
           </CardText>
           <CardText>
             <small className="text-muted">
