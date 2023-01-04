@@ -4,15 +4,16 @@ import {
   CardBody,
   CardTitle,
   CardSubtitle,
-  Button
 } from 'reactstrap'
+import { NavLink } from "react-router-dom"
 
 const CatIndex = ({ cats }) => {
   return (
     <main>
-    {cats.map((cat, index) => {
+    {cats?.map((cat, index) => {
       return (
         <Card
+        key={index}
             body
             style={{
               width: '18rem'
@@ -32,9 +33,10 @@ const CatIndex = ({ cats }) => {
               >
                 {cat.age}
               </CardSubtitle>
-              <Button>
-                View Profile
-              </Button>
+              
+              <NavLink to={`/catshow/${cat.id}`} className="nav-link">
+              See More Details
+              </NavLink>
             </CardBody>
           </Card>
       )
