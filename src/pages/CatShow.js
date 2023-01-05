@@ -7,6 +7,7 @@ import {
   CardImg,
   CardText,
 } from 'reactstrap'
+import { NavLink } from "react-router-dom";
 
 const CatShow = ({ cats }) => {
   const { id } = useParams()
@@ -35,6 +36,9 @@ const CatShow = ({ cats }) => {
               Last updated 3 mins ago
             </small>
           </CardText>
+          <NavLink to={`/catedit/${currentCat.id}`} className="nav-link">
+                Edit this cat
+          </NavLink>
         </CardBody>
       </Card>
  
