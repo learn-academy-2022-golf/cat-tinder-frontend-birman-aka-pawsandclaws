@@ -10,6 +10,9 @@ const CatNew = ( {createCat} ) => {
     age: "",
     enjoys: "",
     image: "",
+    image2: "",
+    image3: "",
+    image4: "",
   });
 
   const handleChange = (e) => {
@@ -55,6 +58,30 @@ const CatNew = ( {createCat} ) => {
             value={newCat.image}
           />
         </FormGroup>
+        <FormGroup>
+        <Label for="image2">Image URL</Label>
+        <Input 
+          type="text" 
+          name="image2"
+          onChange={handleChange}
+          value={newCat.image2} />
+      </FormGroup>
+      <FormGroup>
+        <Label for="image3">Image URL</Label>
+        <Input 
+          type="text" 
+          name="image3"
+          onChange={handleChange}
+          value={newCat.image3} />
+      </FormGroup>
+      <FormGroup>
+        <Label for="image4">Image URL</Label>
+        <Input 
+          type="text" 
+          name="image4"
+          onChange={handleChange}
+          value={newCat.image4} />
+      </FormGroup>
         <Button onClick={handleSubmit}>
           Submit
         </Button>

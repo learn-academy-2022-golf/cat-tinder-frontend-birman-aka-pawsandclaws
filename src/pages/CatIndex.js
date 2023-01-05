@@ -1,23 +1,22 @@
 import React from "react";
-import { Card, CardBody, CardTitle, CardSubtitle } from "reactstrap";
+import { Card, CardBody, CardTitle, CardSubtitle, Button } from "reactstrap";
 import { NavLink } from "react-router-dom";
+
+import Disneyheader from "../assets/disneyheader.png"
 
 const CatIndex = ({ cats }) => {
   return (
-    <main>
-      <NavLink to={`/catnew`} className="nav-link">
-        Create a cat
-      </NavLink>
-      {cats?.map((cat, index) => {
+    <main className="indexframe">
+      <img className="bigheader" src={Disneyheader}/>
+      <div className="indexgrid">
+      {cats.sort((a, b) => a.name.localeCompare(b.name))?.map((cat, index) => {
         return (
-          <Card
+          <Card className="indexcard"
             key={index}
-            body
-            style={{
-              width: "18rem",
-            }}
+
           >
-            <img alt="Sample" src={cat.image} />
+            <img className="indeximage" alt="Sample" src={cat.image} />
+
             <CardBody>
               <CardTitle tag="h5">{cat.name}</CardTitle>
               <CardSubtitle className="mb-2 text-muted" tag="h6">
@@ -25,12 +24,13 @@ const CatIndex = ({ cats }) => {
               </CardSubtitle>
 
               <NavLink to={`/catshow/${cat.id}`} className="nav-link">
-                See More Details
+                <Button>See More Details</Button>
               </NavLink>
             </CardBody>
           </Card>
         );
       })}
+      </div>
     </main>
   );
 };
