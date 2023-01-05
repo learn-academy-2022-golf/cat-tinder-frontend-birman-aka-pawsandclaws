@@ -7,13 +7,16 @@ import CatIndex from "./pages/CatIndex";
 import CatShow from "./pages/CatShow";
 import NotFound from "./pages/NotFound";
 import Home from "./pages/Home"
-import Footer from "./components/Footer";
-import mockCats from "./mockCats";
+import Footer from "./components/Footer"
 import { Routes, Route } from "react-router-dom";
 import React, { useState } from "react"; 
 
 const App = () => {
-  const [cats, setCats] = useState(mockCats)
+  const [cats, setCats] = useState([])
+  fetch("http://localhost:3000/cats")
+  .then((response) => response.json())
+  .then((payload) => {setCats(payload)})
+  .catch((error) => console.log(error))
 
   const createCat = (cat) => {
     console.log(cat)
