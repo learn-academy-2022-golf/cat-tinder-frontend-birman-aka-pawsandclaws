@@ -1,6 +1,13 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { Card, CardBody, CardTitle, CardImg, CardText, Button } from "reactstrap";
+import {
+  Card,
+  CardBody,
+  CardTitle,
+  CardImg,
+  CardText,
+  Button,
+} from "reactstrap";
 import { NavLink } from "react-router-dom";
 
 const CatShow = ({ cats, deleteCat }) => {
@@ -9,31 +16,62 @@ const CatShow = ({ cats, deleteCat }) => {
 
   return (
     <>
-      <Card className="my-2">
-        <CardImg
+      <div className="profilecontainer">
+        <img
+          className="profilepic"
           alt="Card image cap"
           src={currentCat.image}
+        />
+        <span className="bigname"> {currentCat.name}</span>
+      </div>
+      <div className="bio">
+        <p />
+        🐾 {currentCat.age} years old
+        <p />
+        😻 Enjoys {currentCat.enjoys}
+      </div>
+      <p></p>
+      <div className="picgrid">
+        <img
+          alt="Card image cap"
+          src={currentCat.image2}
           style={{
-            objectFit: "contain",
-            height: 180,
+            objectFit: "cover",
+            height: 200,
+            width: 200,
+          }}
+        />{" "}
+        <img
+          alt="Card image cap"
+          src={currentCat.image3}
+          style={{
+            objectFit: "cover",
+            height: 200,
+            width: 200,
+          }}
+        />{" "}
+        <img
+          alt="Card image cap"
+          src={currentCat.image4}
+          style={{
+            objectFit: "cover",
+            height: 200,
+            width: 200,
           }}
         />
-        <CardBody>
-          <CardTitle tag="h5">
-            {currentCat.name}, {currentCat.age}
-          </CardTitle>
-          <CardText>{currentCat.enjoys}</CardText>
-          <CardText>
-            <small className="text-muted">Last updated 3 mins ago</small>
-          </CardText>
-          <NavLink to={`/catedit/${currentCat.id}`} className="nav-link">
+      </div>
+      <CardBody>
+        <NavLink to={`/catedit/${currentCat.id}`} className="nav-link">
           <Button>Edit this cat</Button>
-          </NavLink>
+        </NavLink>
+        <span>
           <NavLink to="/catindex">
-            <Button onClick={() => deleteCat(currentCat.id)}>Delete Cat Profile</Button>
+            <Button onClick={() => deleteCat(currentCat.id)}>
+              Delete Cat Profile
+            </Button>
           </NavLink>
-        </CardBody>
-      </Card>
+        </span>
+      </CardBody>
     </>
   );
 };

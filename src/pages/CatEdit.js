@@ -18,7 +18,10 @@ const CatEdit = ({cats, updateCat}) => {
     name: currentCat.name,
     age: currentCat.age,
     enjoys: currentCat.enjoys,
-    image: currentCat.image
+    image: currentCat.image,
+    image2: currentCat.image2,
+    image3: currentCat.image3,
+    image4: currentCat.image4
   });
 
    const handleChange = (e) => {
@@ -64,6 +67,30 @@ const CatEdit = ({cats, updateCat}) => {
           name="image"
           onChange={handleChange}
           value={editCat.image} />
+      </FormGroup>
+      <FormGroup>
+        <Label for="image2">Image URL</Label>
+        <Input 
+          type="text" 
+          name="image2"
+          onChange={handleChange}
+          value={editCat.image2} />
+      </FormGroup>
+      <FormGroup>
+        <Label for="image3">Image URL</Label>
+        <Input 
+          type="text" 
+          name="image3"
+          onChange={handleChange}
+          value={editCat.image3} />
+      </FormGroup>
+      <FormGroup>
+        <Label for="image4">Image URL</Label>
+        <Input 
+          type="text" 
+          name="image4"
+          onChange={handleChange}
+          value={editCat.image4} />
       </FormGroup>
       <Button onClick={handleSubmit} name="submit">
           Submit

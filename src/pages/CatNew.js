@@ -1,15 +1,17 @@
-import React, { useState } from "react"
-import { Form, FormGroup, Label, Input, Button } from "reactstrap"
-import { useNavigate } from "react-router-dom"
+import React, { useState } from "react";
+import { Form, FormGroup, Label, Input, Button } from "reactstrap";
+import { useNavigate } from "react-router-dom";
 
-
-const CatNew = ( {createCat} ) => {
-  const navigate = useNavigate()
+const CatNew = ({ createCat }) => {
+  const navigate = useNavigate();
   const [newCat, setNewCat] = useState({
     name: "",
     age: "",
     enjoys: "",
     image: "",
+    image2: "",
+    image3: "",
+    image4: "",
   });
 
   const handleChange = (e) => {
@@ -17,9 +19,9 @@ const CatNew = ( {createCat} ) => {
   };
 
   const handleSubmit = () => {
-    createCat(newCat)
-    navigate("/catindex")
-  }
+    createCat(newCat);
+    navigate("/catindex");
+  };
 
   return (
     <div>
@@ -55,9 +57,34 @@ const CatNew = ( {createCat} ) => {
             value={newCat.image}
           />
         </FormGroup>
-        <Button onClick={handleSubmit}>
-          Submit
-        </Button>
+        <FormGroup>
+          <Label for="image2">Image URL</Label>
+          <Input
+            type="text"
+            name="image2"
+            onChange={handleChange}
+            value={newCat.image2}
+          />
+        </FormGroup>
+        <FormGroup>
+          <Label for="image3">Image URL</Label>
+          <Input
+            type="text"
+            name="image3"
+            onChange={handleChange}
+            value={newCat.image3}
+          />
+        </FormGroup>
+        <FormGroup>
+          <Label for="image4">Image URL</Label>
+          <Input
+            type="text"
+            name="image4"
+            onChange={handleChange}
+            value={newCat.image4}
+          />
+        </FormGroup>
+        <Button onClick={handleSubmit}>Submit</Button>
       </Form>
     </div>
   );
